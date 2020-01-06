@@ -37,3 +37,21 @@ Random notes for future reference:
 
 * Load balancer protocol needs to be set to TCP to allow websocket connections
 * Similar rules needed to security group config
+
+## Deploying on Google App Engine (GAE)
+
+At the time of writing (January 2020), Google App Engine only supports [websockets on the Flex environment](https://cloud.google.com/blog/products/application-development/introducing-websockets-support-for-app-engine-flexible-environment). To deploy Bokeh on GAE, you can follow [the instructions in the documentation](https://cloud.google.com/appengine/docs/flexible/custom-runtimes/how-to).
+
+Once you have setup the project and `gcloud` SDK, you need to rename the Dockerfiles
+
+```
+mv Dockerfile Dockerfile-default && mv Dockerfile-GAE Dockerfile
+```
+
+after which deploying to GAE can be done with
+
+```
+gcloud app deploy
+```
+
+Note this is just a bare-bones deployment, with no SSL or any security measures. Using a load-balancer is recommended as described in the GAE documentation.
