@@ -25,13 +25,12 @@ docker build --tag demo.bokeh.org .
 
 Execute the command to start the Docker container:
 ```
-docker run --rm -p 5006:5006 -it demo.bokeh.org
+docker run --rm -p 5006:5006 -it interview:bokehapp
 ```
 Now navigate to ``http://localhost:5006`` to interact with the demo site. 
 
 ## Deploying to AWS
-
-The published [demo.bokeh.org](https://demo.bokeh.org) site is deployed using [Elastic Beanstalk with Docker Containers](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_docker.html). 
+The bokeh server can be deployed using [Elastic Beanstalk with Docker Containers](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_docker.html). 
 
 Random notes for future reference:
 
